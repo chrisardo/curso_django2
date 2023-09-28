@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla que recibe parametros</title>
+    <style type="text/css">
+        li {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Plantilla que recibe parametro: {{nombrePlantilla}} </h1>
+    <h2> Fecha actual: D&iacute;a:{{fechaActualPlantilla.day}} - Mes: {{fechaActualPlantilla.month}} -year:
+        {{fechaActualPlantilla.year}} </h2>
+    {#Este es un comentario de una sola linea#}
+    <h3>Nro. de lenguajes: {{lenguajes|length}}</h3>
+    <!--Lista de lenguajes de programacion-->
+    <ul>
+        {% for leng in lenguajes %}
+        {% if leng == "Python" %}
+        <li style="color:green;"><strong> {{leng}} </strong></li>
+        {% else %}
+        <li> {{leng|first}} : {{leng|lower}} </li>
+        {% endif %}
+        {% endfor %}
+    </ul>
+    {% comment%}
+    Este es un comentario de
+    varias lineas
+    {% endcomment%}
+</body>
+
+</html>

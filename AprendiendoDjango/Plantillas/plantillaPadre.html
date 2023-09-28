@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/plantillaNavBarStyle.css' %}">
+</head>
+
+<body>
+    {#Comentario: Incluye el contenido de la plantilla plantillaNavBar.html #}
+    {% include "plantillaNavBar.html" %}
+    <h1 style="color: cadetblue;">Pie de pagina</h1>
+    <img src="{% static 'img/programacion.jpg' %}" alt="Imagen de prueba" width="200px" height="200px">
+    {% block content %}
+    {% endblock %}
+
+    <script src="{% static 'js/plantillaPadre.js' %}"></script>
+</body>
+
+</html>
